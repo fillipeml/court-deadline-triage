@@ -1,0 +1,42 @@
+{
+ "court": "TRT18",
+ "year": 2026,
+ "version": "2026-09-24",
+ "source": {
+  "act": "TRT18 Order 2329/2025 (suspensions) + TRT18 annual calendar 2026 + Law 5,010/1966, art. 62 + Internal Rules of the TRT18, art. 255",
+  "url": "https://bibliotecadigital.trt18.jus.br/xmlui/bitstream/handle/bdtrt18/34221/Portaria_TRT18_2329_2025.PDF?sequence=1&isAllowed=y",
+  "calendar_url": "https://www.trt18.jus.br/portal/arquivos/2026/01/Calendario-2026_Insta.pdf",
+  "captured_on": "2026-09-24",
+  "index": "https://www.aasp.org.br/produtos-servicos/expediente-forense/feriados-forenses-2026/"
+ },
+ "review": {"status": "pending", "by": null, "on": null},
+ "local_coverage": "partial",
+ "notes": "Days for the whole region: holidays of Law 5,010/1966 (art. 62) and of the internal rules, checked against the official graphic calendar, plus the 5 suspensions of Order 2329/2025 (which extend deadlines, CPC arts. 216 and 219). MUNICIPAL holidays per labour court appear only in the graphic calendar and were NOT transcribed, hence local_coverage=partial. Public Servant Day (28/10) does not appear in the acts consulted.",
+ "days": [
+  {"date": "2026-01-01", "description": "New Year's Day", "effect": "closed"},
+  {"date": "2026-02-16", "description": "Carnival (Law 5,010/1966, art. 62, III)", "effect": "closed"},
+  {"date": "2026-02-17", "description": "Carnival (Law 5,010/1966, art. 62, III)", "effect": "closed"},
+  {"date": "2026-02-18", "description": "Ash Wednesday, activities suspended (Order 2329/2025)", "effect": "closed"},
+  {"date": "2026-04-01", "description": "Holy Week (Law 5,010/1966, art. 62, II)", "effect": "closed"},
+  {"date": "2026-04-02", "description": "Holy Week (Law 5,010/1966, art. 62, II)", "effect": "closed"},
+  {"date": "2026-04-03", "description": "Holy Week (Law 5,010/1966, art. 62, II)", "effect": "closed"},
+  {"date": "2026-04-20", "description": "Activities suspended, eve of Tiradentes Day (Order 2329/2025)", "effect": "closed"},
+  {"date": "2026-04-21", "description": "Tiradentes Day", "effect": "closed"},
+  {"date": "2026-05-01", "description": "Labour Day", "effect": "closed"},
+  {"date": "2026-06-04", "description": "Corpus Christi (Internal Rules of the TRT18, art. 255, IV)", "effect": "closed"},
+  {"date": "2026-06-05", "description": "Activities suspended, day after Corpus Christi (Order 2329/2025)", "effect": "closed"},
+  {"date": "2026-08-10", "description": "Activities suspended, eve of the Day of the Magistrate (Order 2329/2025)", "effect": "closed"},
+  {"date": "2026-08-11", "description": "Day of the Magistrate and of the Lawyer (Law 5,010/1966, art. 62, IV)", "effect": "closed"},
+  {"date": "2026-09-07", "description": "Independence Day", "effect": "closed"},
+  {"date": "2026-10-12", "description": "Our Lady of Aparecida", "effect": "closed"},
+  {"date": "2026-11-02", "description": "All Souls' Day (Law 5,010/1966, art. 62, IV)", "effect": "closed"},
+  {"date": "2026-11-15", "description": "Republic Day", "effect": "closed"},
+  {"date": "2026-11-20", "description": "Black Awareness Day", "effect": "closed"},
+  {"date": "2026-12-07", "description": "Activities suspended, eve of the Day of Justice (Order 2329/2025)", "effect": "closed"},
+  {"date": "2026-12-08", "description": "Day of Justice (Law 5,010/1966, art. 62, IV)", "effect": "closed"},
+  {"date": "2026-12-25", "description": "Christmas", "effect": "closed"}
+ ],
+ "periods": [
+  {"start": "2026-12-20", "end": "2026-12-31", "description": "Judiciary recess 20/12 to 06/01 (Law 5,010/1966, art. 62, I)", "effect": "closed"}
+ ]
+}

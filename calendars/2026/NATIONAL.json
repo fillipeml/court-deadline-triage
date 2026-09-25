@@ -1,0 +1,24 @@
+{
+ "court": "NATIONAL",
+ "year": 2026,
+ "version": "2026-09-24",
+ "source": {
+  "act": "Law 662/1949 (as amended by Law 10,607/2002); Law 6,802/1980; Law 14,759/2023",
+  "url": "https://www.planalto.gov.br/ccivil_03/leis/l0662.htm",
+  "captured_on": "2026-09-24"
+ },
+ "review": {"status": "pending", "by": null, "on": null},
+ "local_coverage": "complete",
+ "notes": "Legal floor: national civil holidays. Carnival, Holy Week and Corpus Christi are NOT national holidays under federal law; they enter through each court's own calendar. The CPC art. 220 suspension (20 Dec to 20 Jan) is applied in code.",
+ "days": [
+  {"date": "2026-01-01", "description": "New Year's Day (Law 662/1949)", "effect": "closed"},
+  {"date": "2026-04-21", "description": "Tiradentes Day (Law 662/1949)", "effect": "closed"},
+  {"date": "2026-05-01", "description": "Labour Day (Law 662/1949)", "effect": "closed"},
+  {"date": "2026-09-07", "description": "Independence Day (Law 662/1949)", "effect": "closed"},
+  {"date": "2026-10-12", "description": "Our Lady of Aparecida (Law 6,802/1980)", "effect": "closed"},
+  {"date": "2026-11-02", "description": "All Souls' Day (Law 662/1949)", "effect": "closed"},
+  {"date": "2026-11-15", "description": "Republic Day (Law 662/1949)", "effect": "closed"},
+  {"date": "2026-11-20", "description": "Black Awareness Day (Law 14,759/2023)", "effect": "closed"},
+  {"date": "2026-12-25", "description": "Christmas (Law 662/1949)", "effect": "closed"}
+ ]
+}
