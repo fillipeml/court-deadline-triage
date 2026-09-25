@@ -1,0 +1,229 @@
+{
+ "note": "Invented publications in the raw shape of the DJEN API. Parties, lawyers and bar numbers are fictional (state 'ZZ' does not exist). Case numbers use year 2099 and 'XX' check digits, completed at load time. 'demo_classification' is the answer the fixture classifier replays for publications that would otherwise go to the model.",
+ "publications": [
+  {
+   "bars": ["12345/ZZ", "67890/ZZ"],
+   "raw": {
+    "id": 900001, "hash": "fixture-0001-answer", "data_disponibilizacao": "2026-09-21", "siglaTribunal": "TJGO",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Despacho", "nomeOrgao": "Goiânia - 3ª Vara Cível",
+    "nomeClasse": "Procedimento Comum Cível", "numeroprocessocommascara": "0000101-XX.2099.8.09.0001",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900001", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "PODER JUDICI&Aacute;RIO DO ESTADO DE GOI&Aacute;S. Autos n. 0000101-XX.2099.8.09.0001. Requerente: Acme Com&eacute;rcio de Alimentos Ltda. Requerido: Beta Log&iacute;stica S.A. DESPACHO: Recebo a inicial. Cite-se e intime-se a parte r&eacute; para, querendo, apresentar contesta&ccedil;&atilde;o no prazo legal, sob pena de revelia. Intimem-se.",
+    "destinatarios": [{"nome": "Beta Logística S.A.", "polo": "P"}],
+    "destinatarioadvogados": [
+     {"advogado": {"nome": "Ana Exemplo", "numero_oab": "12345", "uf_oab": "ZZ"}},
+     {"advogado": {"nome": "Bruno Exemplo", "numero_oab": "67890", "uf_oab": "ZZ"}}
+    ]
+   },
+   "demo_classification": {
+    "opens_deadline": true, "event_code": 1, "suggested_type": null, "days_in_text": null, "regime_in_text": null,
+    "double_deadline_hint": false, "scheduled_date": null, "confidence": "high",
+    "rationale": "Order serving the defendant to answer the complaint within the legal deadline; the addressed lawyers represent the defendant.",
+    "source_excerpt": "intime-se a parte ré para, querendo, apresentar contestação no prazo legal"
+   }
+  },
+  {
+   "bars": ["12345/ZZ"],
+   "raw": {
+    "id": 900002, "hash": "fixture-0002-labour-appeal", "data_disponibilizacao": "2026-09-18", "siglaTribunal": "TRT18",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Sentença", "nomeOrgao": "3ª Vara do Trabalho de Goiânia",
+    "nomeClasse": "Ação Trabalhista - Rito Ordinário", "numeroprocessocommascara": "0000201-XX.2099.5.18.0003",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900002", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "SENTEN&Ccedil;A. Reclamante: Carlos Exemplo. Reclamada: Acme Com&eacute;rcio de Alimentos Ltda. Ante o exposto, julgo PARCIALMENTE PROCEDENTES os pedidos para condenar a reclamada ao pagamento de horas extras e reflexos, conforme fundamenta&ccedil;&atilde;o. Custas pela reclamada. Intimem-se as partes. Prazo recursal na forma da lei.",
+    "destinatarios": [{"nome": "Acme Comércio de Alimentos Ltda.", "polo": "P"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Ana Exemplo", "numero_oab": "12345", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": {
+    "opens_deadline": true, "event_code": 57, "suggested_type": null, "days_in_text": null, "regime_in_text": null,
+    "double_deadline_hint": false, "scheduled_date": null, "confidence": "high",
+    "rationale": "Labour judgment partially against the client company; the recourse is the ordinary labour appeal, deadline set by law.",
+    "source_excerpt": "Intimem-se as partes. Prazo recursal na forma da lei."
+   }
+  },
+  {
+   "bars": ["12345/ZZ"],
+   "raw": {
+    "id": 900003, "hash": "fixture-0003-five-days-in-text", "data_disponibilizacao": "2026-09-19", "siglaTribunal": "TJGO",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Ato ordinatório", "nomeOrgao": "Anápolis - 2ª Vara Cível",
+    "nomeClasse": "Execução de Título Extrajudicial", "numeroprocessocommascara": "0000102-XX.2099.8.09.0002",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900003", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "ATO ORDINAT&Oacute;RIO. Fica a parte exequente intimada para se manifestar sobre a certid&atilde;o negativa do oficial de justi&ccedil;a, no prazo de 5 (cinco) dias, requerendo o que entender de direito para o prosseguimento do feito.",
+    "destinatarios": [{"nome": "Acme Comércio de Alimentos Ltda.", "polo": "A"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Ana Exemplo", "numero_oab": "12345", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": {
+    "opens_deadline": true, "event_code": 11, "suggested_type": null, "days_in_text": 5, "regime_in_text": null,
+    "double_deadline_hint": false, "scheduled_date": null, "confidence": "high",
+    "rationale": "Clerk's act ordering the creditor to state its position; the number of days is written in the act.",
+    "source_excerpt": "no prazo de 5 (cinco) dias, requerendo o que entender de direito"
+   }
+  },
+  {
+   "bars": ["67890/ZZ"],
+   "raw": {
+    "id": 900004, "hash": "fixture-0004-court-without-calendar", "data_disponibilizacao": "2026-09-21", "siglaTribunal": "TJMG",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Despacho", "nomeOrgao": "Belo Horizonte - 12ª Vara Cível",
+    "nomeClasse": "Procedimento Comum Cível", "numeroprocessocommascara": "0000301-XX.2099.8.13.0024",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900004", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "Vista &agrave; parte embargada para, querendo, impugnar os embargos de declara&ccedil;&atilde;o opostos pela parte autora, nos termos do art. 1.023, &sect; 2&ordm;, do CPC. Intime-se.",
+    "destinatarios": [{"nome": "Delta Incorporações Ltda.", "polo": "P"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Bruno Exemplo", "numero_oab": "67890", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": {
+    "opens_deadline": true, "event_code": 14, "suggested_type": null, "days_in_text": null, "regime_in_text": null,
+    "double_deadline_hint": false, "scheduled_date": null, "confidence": "medium",
+    "rationale": "Notice to respond to a motion for clarification; treated as the five-day motion deadline family, medium confidence because the response is optional.",
+    "source_excerpt": "Vista à parte embargada para, querendo, impugnar os embargos de declaração"
+   }
+  },
+  {
+   "bars": ["12345/ZZ"],
+   "raw": {
+    "id": 900005, "hash": "fixture-0005-assignment-list", "data_disponibilizacao": "2026-09-21", "siglaTribunal": "TJGO",
+    "tipoComunicacao": "Lista de distribuição", "tipoDocumento": "Outros", "nomeOrgao": "Distribuição - Goiânia",
+    "nomeClasse": "Procedimento Comum Cível", "numeroprocessocommascara": "0000103-XX.2099.8.09.0001",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900005", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "Processo distribu&iacute;do por sorteio &agrave; 3&ordf; Vara C&iacute;vel de Goi&acirc;nia.",
+    "destinatarios": [{"nome": "Acme Comércio de Alimentos Ltda.", "polo": "A"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Ana Exemplo", "numero_oab": "12345", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": null
+  },
+  {
+   "bars": ["12345/ZZ"],
+   "raw": {
+    "id": 900006, "hash": "fixture-0006-sealed", "data_disponibilizacao": "2026-09-21", "siglaTribunal": "TJGO",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Decisão", "nomeOrgao": "Goiânia - 1ª Vara de Família",
+    "nomeClasse": "Divórcio Litigioso", "numeroprocessocommascara": "0000104-XX.2099.8.09.0001",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900006", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "PROCESSO EM SEGREDO DE JUSTI&Ccedil;A. OS ARQUIVOS DA INTIMA&Ccedil;&Atilde;O N&Atilde;O FORAM PUBLICADOS.",
+    "destinatarios": [],
+    "destinatarioadvogados": [{"advogado": {"nome": "Ana Exemplo", "numero_oab": "12345", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": null
+  },
+  {
+   "bars": ["67890/ZZ"],
+   "raw": {
+    "id": 900007, "hash": "fixture-0007-cancelled", "data_disponibilizacao": "2026-09-18", "siglaTribunal": "TJGO",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Despacho", "nomeOrgao": "Goiânia - 5ª Vara Cível",
+    "nomeClasse": "Procedimento Comum Cível", "numeroprocessocommascara": "0000105-XX.2099.8.09.0001",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900007", "ativo": false, "status": "C",
+    "motivo_cancelamento": "republicação por erro material", "data_cancelamento": "2026-09-19",
+    "texto": "Intime-se a parte autora para emendar a inicial no prazo de 15 dias.",
+    "destinatarios": [{"nome": "Delta Incorporações Ltda.", "polo": "A"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Bruno Exemplo", "numero_oab": "67890", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": null
+  },
+  {
+   "bars": ["12345/ZZ"],
+   "raw": {
+    "id": 900008, "hash": "fixture-0008-mere-notice", "data_disponibilizacao": "2026-09-21", "siglaTribunal": "TJGO",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Despacho", "nomeOrgao": "Goiânia - 3ª Vara Cível",
+    "nomeClasse": "Procedimento Comum Cível", "numeroprocessocommascara": "0000106-XX.2099.8.09.0001",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900008", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "Ci&ecirc;ncia &agrave;s partes da juntada do of&iacute;cio de resposta do banco. Nada sendo requerido, aguarde-se em cart&oacute;rio o retorno da carta precat&oacute;ria.",
+    "destinatarios": [{"nome": "Acme Comércio de Alimentos Ltda.", "polo": "A"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Ana Exemplo", "numero_oab": "12345", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": {
+    "opens_deadline": false, "event_code": null, "suggested_type": null, "days_in_text": null, "regime_in_text": null,
+    "double_deadline_hint": false, "scheduled_date": null, "confidence": "high",
+    "rationale": "Mere notice of a filing; no determination addressed to the party.",
+    "source_excerpt": "Ciência às partes da juntada do ofício de resposta do banco"
+   }
+  },
+  {
+   "bars": ["12345/ZZ"],
+   "raw": {
+    "id": 900009, "hash": "fixture-0009-public-treasury", "data_disponibilizacao": "2026-09-21", "siglaTribunal": "TJGO",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Decisão", "nomeOrgao": "Goiânia - 2ª Vara da Fazenda Pública Estadual",
+    "nomeClasse": "Procedimento Comum Cível", "numeroprocessocommascara": "0000107-XX.2099.8.09.0001",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900009", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "DECIS&Atilde;O. Indefiro a tutela de urg&ecirc;ncia. Cite-se o Estado de Goi&aacute;s, por sua Procuradoria, para contestar, observado o prazo em dobro (CPC, art. 183). Intime-se a parte autora.",
+    "destinatarios": [{"nome": "Acme Comércio de Alimentos Ltda.", "polo": "A"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Ana Exemplo", "numero_oab": "12345", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": {
+    "opens_deadline": true, "event_code": 1, "suggested_type": null, "days_in_text": null, "regime_in_text": null,
+    "double_deadline_hint": true, "scheduled_date": null, "confidence": "high",
+    "rationale": "The State is served to answer with a doubled deadline (CPC, art. 183); the client is the plaintiff, but the doubling flag must reach a human.",
+    "source_excerpt": "para contestar, observado o prazo em dobro (CPC, art. 183)"
+   }
+  },
+  {
+   "bars": ["67890/ZZ"],
+   "raw": {
+    "id": 900010, "hash": "fixture-0010-hearing-scheduled", "data_disponibilizacao": "2026-09-21", "siglaTribunal": "TJGO",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Despacho", "nomeOrgao": "Goiânia - 4ª Vara Cível",
+    "nomeClasse": "Procedimento Comum Cível", "numeroprocessocommascara": "0000108-XX.2099.8.09.0001",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900010", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "Designo audi&ecirc;ncia de concilia&ccedil;&atilde;o para o dia 20/10/2026, &agrave;s 14h, por videoconfer&ecirc;ncia. Intimem-se as partes por seus advogados.",
+    "destinatarios": [{"nome": "Delta Incorporações Ltda.", "polo": "P"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Bruno Exemplo", "numero_oab": "67890", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": {
+    "opens_deadline": true, "event_code": 77, "suggested_type": null, "days_in_text": null, "regime_in_text": null,
+    "double_deadline_hint": false, "scheduled_date": "2026-10-20", "confidence": "high",
+    "rationale": "A conciliation hearing is scheduled for a fixed date; nothing is counted from the publication.",
+    "source_excerpt": "Designo audiência de conciliação para o dia 20/10/2026, às 14h"
+   }
+  },
+  {
+   "bars": ["12345/ZZ"],
+   "raw": {
+    "id": 900011, "hash": "fixture-0011-long-appellate-decision", "data_disponibilizacao": "2026-09-18", "siglaTribunal": "TRT18",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Acórdão", "nomeOrgao": "2ª Turma",
+    "nomeClasse": "Recurso Ordinário Trabalhista", "numeroprocessocommascara": "0000202-XX.2099.5.18.0010",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900011", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": {
+     "repeat": 45,
+     "paragraphs": [
+      "AC&Oacute;RD&Atilde;O. Recorrente: Acme Com&eacute;rcio de Alimentos Ltda. Recorrido: Carlos Exemplo. Relator: Desembargador Exemplo. EMENTA: HORAS EXTRAS. CART&Otilde;ES DE PONTO. &Ocirc;NUS DA PROVA. Invalidados os controles de jornada, prevalece a jornada declinada na inicial, salvo prova em contr&aacute;rio.",
+      "A reclamada sustenta que os cart&otilde;es de ponto juntados aos autos retratam fielmente a jornada praticada, e que a prova oral n&atilde;o seria apta a infirm&aacute;-los. Sem raz&atilde;o. A testemunha ouvida a rogo do reclamante afirmou, de forma segura e coerente, que os registros eram feitos em hor&aacute;rio diverso do efetivamente trabalhado, o que retira a presun&ccedil;&atilde;o de veracidade dos controles. Nesse contexto, incide o entendimento consolidado da S&uacute;mula 338 do TST, transferindo-se &agrave; empregadora o &ocirc;nus de comprovar a jornada, do qual n&atilde;o se desincumbiu.",
+      "No tocante aos reflexos, a habitualidade das horas extras est&aacute; demonstrada, sendo devidos os reflexos em repouso semanal remunerado, f&eacute;rias acrescidas do ter&ccedil;o constitucional, d&eacute;cimo terceiro sal&aacute;rio e FGTS, na forma da fundamenta&ccedil;&atilde;o da senten&ccedil;a, que fica mantida por seus pr&oacute;prios fundamentos.",
+      "ISTO POSTO, ACORDAM os Desembargadores da 2&ordf; Turma, por unanimidade, em conhecer do recurso ordin&aacute;rio da reclamada e, no m&eacute;rito, NEGAR-LHE PROVIMENTO, nos termos do voto do Relator. Custas pela reclamada. Intimem-se as partes."
+     ]
+    },
+    "destinatarios": [{"nome": "Acme Comércio de Alimentos Ltda.", "polo": "A"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Ana Exemplo", "numero_oab": "12345", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": {
+    "opens_deadline": true, "event_code": 59, "suggested_type": null, "days_in_text": null, "regime_in_text": null,
+    "double_deadline_hint": false, "scheduled_date": null, "confidence": "high",
+    "rationale": "Appellate decision denying the company's ordinary appeal; the next recourse is the labour review appeal, deadline set by law.",
+    "source_excerpt": "NEGAR-LHE PROVIMENTO, nos termos do voto do Relator. Custas pela reclamada. Intimem-se as partes."
+   }
+  },
+  {
+   "bars": ["67890/ZZ"],
+   "raw": {
+    "id": 900012, "hash": "fixture-0012-court-diverges-from-number", "data_disponibilizacao": "2026-09-21", "siglaTribunal": "TRT18",
+    "tipoComunicacao": "Intimação", "tipoDocumento": "Despacho", "nomeOrgao": "1ª Vara do Trabalho de Anápolis",
+    "nomeClasse": "Ação Trabalhista - Rito Ordinário", "numeroprocessocommascara": "0000109-XX.2099.8.09.0002",
+    "meio": "D", "link": "https://comunica.pje.jus.br/consulta?id=900012", "ativo": true, "status": "P",
+    "motivo_cancelamento": null, "data_cancelamento": null,
+    "texto": "Recebo a reclama&ccedil;&atilde;o trabalhista redistribu&iacute;da da Justi&ccedil;a Comum. Intime-se a reclamada para apresentar contesta&ccedil;&atilde;o no prazo de 15 dias &uacute;teis, conforme decidido no conflito de compet&ecirc;ncia.",
+    "destinatarios": [{"nome": "Delta Incorporações Ltda.", "polo": "P"}],
+    "destinatarioadvogados": [{"advogado": {"nome": "Bruno Exemplo", "numero_oab": "67890", "uf_oab": "ZZ"}}]
+   },
+   "demo_classification": {
+    "opens_deadline": true, "event_code": 1, "suggested_type": null, "days_in_text": 15, "regime_in_text": "business",
+    "double_deadline_hint": false, "scheduled_date": null, "confidence": "high",
+    "rationale": "Order to answer within 15 business days in a case redistributed from the state court; the case number still carries the state court's code.",
+    "source_excerpt": "apresentar contestação no prazo de 15 dias úteis"
+   }
+  }
+ ]
+}
