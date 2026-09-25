@@ -1,0 +1,97 @@
+{
+ "description": "Golden cases of the engine, computed by hand against the calendars under calendars/2026. Legal review pending.",
+ "computed_by": "Fillipe Loose, 2026-09-24 (by hand, independently of the engine)",
+ "legal_review": {"status": "pending", "by": null, "on": null},
+ "cases": [
+  {
+   "id": "A-simple-holiday-in-the-middle",
+   "court": "TJGO", "available_on": "2026-09-21", "days": 15, "regime": "business",
+   "expected": {"published_on": "2026-09-22", "start_on": "2026-09-23", "due_on": "2026-10-14"},
+   "reasoning": "Available Mon 21/09 -> published Tue 22/09 -> first day Wed 23/09. 23,24,25,28,29,30/09, 01,02,05,06,07,08,09/10 (13); 12/10 Our Lady of Aparecida; 13 (14), 14/10 (15)."
+  },
+  {
+   "id": "B-available-on-a-friday",
+   "court": "TJGO", "available_on": "2026-09-25", "days": 5, "regime": "business",
+   "expected": {"published_on": "2026-09-28", "start_on": "2026-09-29", "due_on": "2026-10-05"},
+   "reasoning": "Available Fri 25/09 -> published Mon 28/09 (skips the weekend) -> first day Tue 29/09. 29,30/09, 01,02,05/10."
+  },
+  {
+   "id": "C-holy-week-and-optional-holiday",
+   "court": "TJGO", "available_on": "2026-03-30", "days": 15, "regime": "business",
+   "expected": {"published_on": "2026-03-31", "start_on": "2026-04-06", "due_on": "2026-04-27", "uncertain": ["2026-04-20"]},
+   "reasoning": "Published Tue 31/03. 01-03/04 Holy Week, 04-05 weekend -> first day Mon 06/04. 06,07,08,09,10,13,14,15,16,17 (10); 20/04 optional holiday NOT confirmed counts as a business day (11); 21/04 Tiradentes; 22,23,24 (14), 27/04 (15). If the optional holiday extends deadlines it would be 28/04, hence the warning."
+  },
+  {
+   "id": "D-ash-wednesday-reduced-hours-as-first-day",
+   "court": "TJGO", "available_on": "2026-02-12", "days": 5, "regime": "business",
+   "expected": {"published_on": "2026-02-13", "start_on": "2026-02-19", "due_on": "2026-02-25"},
+   "reasoning": "Published Fri 13/02. 16-17 Carnival; 18/02 open only after noon cannot be the first day (CPC 224 §1) -> first day Thu 19/02. 19,20,23,24,25/02."
+  },
+  {
+   "id": "D2-ash-wednesday-reduced-hours-as-due-date",
+   "court": "TJGO", "available_on": "2026-02-06", "days": 5, "regime": "business",
+   "expected": {"published_on": "2026-02-09", "start_on": "2026-02-10", "due_on": "2026-02-19"},
+   "reasoning": "Published Mon 09/02 -> first day Tue 10/02. 10,11,12,13 (4); 16-17 Carnival; 18/02 counts in the middle (5) but cannot be the due date (CPC 224 §1) -> 19/02."
+  },
+  {
+   "id": "E-crosses-the-recess-without-a-2027-calendar",
+   "court": "TJGO", "available_on": "2026-11-30", "days": 15, "regime": "business",
+   "expected": {"missing_coverage": "TJGO/2027"},
+   "reasoning": "First day 02/12; up to 18/12 12 days count (08/12 Day of Justice excluded); 20/12 to 20/01 suspended (CPC 220) -> the deadline ends in 2027, whose TJGO calendar does not exist -> not computed."
+  },
+  {
+   "id": "F1-same-dates-TRT18-bridge-day-7-12",
+   "court": "TRT18", "available_on": "2026-11-30", "days": 8, "regime": "business",
+   "expected": {"published_on": "2026-12-01", "start_on": "2026-12-02", "due_on": "2026-12-15"},
+   "reasoning": "First day Wed 02/12. 02,03,04 (3); 07/12 suspension (Order 2329/2025); 08/12 Day of Justice; 09,10,11,14,15/12 (8)."
+  },
+  {
+   "id": "F2-same-dates-TJGO-no-bridge-day",
+   "court": "TJGO", "available_on": "2026-11-30", "days": 8, "regime": "business",
+   "expected": {"published_on": "2026-12-01", "start_on": "2026-12-02", "due_on": "2026-12-14"},
+   "reasoning": "Same case at the TJGO: 07/12 is a business day. 02,03,04,07 (4); 08/12 Day of Justice; 09,10,11,14/12 (8). One day of difference from the court alone: proof that the calendar is per court."
+  },
+  {
+   "id": "G1-corpus-christi-TRT18",
+   "court": "TRT18", "available_on": "2026-06-01", "days": 8, "regime": "business",
+   "expected": {"published_on": "2026-06-02", "start_on": "2026-06-03", "due_on": "2026-06-16"},
+   "reasoning": "First day Wed 03/06 (1); 04/06 Corpus Christi; 05/06 suspension (Order 2329/2025); 08,09,10,11,12,15,16/06 (8)."
+  },
+  {
+   "id": "G2-corpus-christi-TJGO",
+   "court": "TJGO", "available_on": "2026-06-01", "days": 8, "regime": "business",
+   "expected": {"published_on": "2026-06-02", "start_on": "2026-06-03", "due_on": "2026-06-15", "uncertain": ["2026-06-05"]},
+   "reasoning": "First day 03/06 (1); 04/06 Corpus Christi; 05/06 optional holiday not confirmed counts (2); 08,09,10,11,12,15/06 (8)."
+  },
+  {
+   "id": "H1-calendar-days",
+   "court": "TJGO", "available_on": "2026-09-21", "days": 10, "regime": "calendar",
+   "expected": {"published_on": "2026-09-22", "start_on": "2026-09-23", "due_on": "2026-10-02"},
+   "reasoning": "First day 23/09 (1) ... 02/10 (10), weekends count."
+  },
+  {
+   "id": "H2-calendar-days-ending-on-a-sunday",
+   "court": "TJGO", "available_on": "2026-09-21", "days": 12, "regime": "calendar",
+   "expected": {"published_on": "2026-09-22", "start_on": "2026-09-23", "due_on": "2026-10-05"},
+   "reasoning": "12th calendar day = Sun 04/10 -> moved to Mon 05/10 (CPC 224 §1)."
+  },
+  {
+   "id": "I-available-on-a-saturday",
+   "court": "TJGO", "available_on": "2026-09-19", "days": 5, "regime": "business",
+   "expected": {"published_on": "2026-09-21", "start_on": "2026-09-22", "due_on": "2026-09-28"},
+   "reasoning": "Published Mon 21/09 -> first day Tue 22/09. 22,23,24,25,28/09."
+  },
+  {
+   "id": "J-ash-wednesday-TRT18-closed",
+   "court": "TRT18", "available_on": "2026-02-12", "days": 8, "regime": "business",
+   "expected": {"published_on": "2026-02-13", "start_on": "2026-02-19", "due_on": "2026-03-02"},
+   "reasoning": "At the TRT18 Ash Wednesday is a full suspension (not reduced hours). First day 19/02; 19,20,23,24,25,26,27/02, 02/03 (8)."
+  },
+  {
+   "id": "K-court-without-a-calendar",
+   "court": "STJ", "available_on": "2026-09-21", "days": 15, "regime": "business",
+   "expected": {"missing_coverage": "STJ/2026"},
+   "reasoning": "STJ has no file under calendars/2026 -> not computed."
+  }
+ ]
+}
