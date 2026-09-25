@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: lint + tests + demo run
+    runs-on: ubuntu-latest
+    env:
+      DEMO_MODE: "true"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          enable-cache: true
+
+      - name: Install Python and dependencies
+        run: |
+          uv python install 3.12
+          uv sync --locked --dev
+
+      - name: Lint
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+
+      - name: Tests
+        run: uv run pytest -q
+
+      - name: Catalogue is up to date with its source
+        run: |
+          uv run build-catalogue --target /tmp/events.json
+          python3 -c "import json,sys; a=json.load(open('catalogue/events.json')); b=json.load(open('/tmp/events.json')); a.pop('generated_on'); b.pop('generated_on'); sys.exit(0 if a==b else 'catalogue/events.json is stale: run build-catalogue')"
+
+      - name: Demo run (offline, delivers to the local outbox), twice for idempotency
+        env:
+          DRY_RUN: "false"
+        run: |
+          uv run deadline-triage
+          uv run deadline-triage
+          uv run deadline-triage --health || true
+          uv run deadline-triage --compute 2026-09-21 15 business TJGO
+          ls .demo/output .demo/output/outbox
+
+  secrets:
+    name: secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,14 @@
+[brand]
+terms = ["STG", "Schmeisser", "Terra Gomes", "stglaw", "RenavePro", "Renave", "Lagoa Quente", "HJR", "ELAW"]
+
+[domains]
+internal = ["stglaw.com.br", "stgadvogados.com.br"]
+
+[hosts]
+suffixes = ["sharepoint.com", "onmicrosoft.com"]
+
+[allow]
+# .demo/, data/ and output/ are git-ignored run outputs; the demo completes fixture case numbers with valid
+# check digits at load time, so their copies in the outbox and CSV are synthetic too.
+paths = ["uv.lock", ".demo/*", ".demo/**/*", "data/*", "output/*", "output/**/*"]
+patterns = []
