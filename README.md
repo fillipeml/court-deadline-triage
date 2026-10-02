@@ -57,7 +57,7 @@ flowchart LR
   M -. DEMO_MODE .-> FC[fixture classifier]
 ```
 
-The gazette client maps the API's Portuguese fields once into an English record; from there on the code is English and the domain terms are in the glossary. Classification is two calls: a free-form legal map of the act, then a Pydantic-validated JSON built only from that map, with the catalogue table in a cached system prompt. The decision layer turns the model's answer plus the event's calculation mode into an instruction for the engine or a reason for review. The engine walks the calendar day by day and keeps the audit trail: every skipped holiday, every uncertain day, every calendar file and version used. The factory is the only module that reads `DEMO_MODE`.
+The gazette client maps the API's Portuguese fields once into an English record; from there on the code is English and the domain terms are in the glossary. Classification is two calls: a free-form legal map of the act, then a Pydantic-validated JSON built only from that map, with the catalogue table in a cached system prompt. The decision layer turns the model's answer plus the event's calculation mode into an instruction for the engine or a reason for review. The engine walks the calendar day by day and keeps the audit trail: every skipped holiday, every uncertain day, every calendar file and version used. `DEMO_MODE` is read in one place, `config.py`; the resolved `config.demo_mode` flag is what the factory consults to pick the adapters, and what `alerts`, `health` and the CLI consult to say which mode they are in.
 
 ## Design decisions
 

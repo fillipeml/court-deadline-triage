@@ -37,8 +37,12 @@ Run the command again: nothing is new, nothing is triaged twice.
 ## 2. The digest and the CSV
 
 ```bash
-DRY_RUN=false uv run deadline-triage --triage-only
+rm -rf .demo                            # replay the run with delivery on
+DRY_RUN=false uv run deadline-triage
 ```
+
+Step 1 has already triaged everything, so `--triage-only` on top of it finds nothing left to
+do and delivers nothing. The state is reset and the whole run repeated instead.
 
 With `DRY_RUN=false` the digest is delivered. In demo mode delivery means a text file in
 `.demo/output/outbox/`, exactly what the team would receive: the counts, the table, the legend and
