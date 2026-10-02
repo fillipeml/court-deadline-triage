@@ -159,7 +159,7 @@ def main() -> int:
         return code
 
     config = Config.from_env()
-    if args.window_days:
+    if args.window_days is not None:
         config.window_days = args.window_days
     if args.bar:
         try:
@@ -179,7 +179,7 @@ def main() -> int:
         f"window: {config.window_days} day(s) to {config.today} | DRY_RUN: {config.dry_run}"
     )
 
-    if args.limit:
+    if args.limit is not None:
         config.triage_limit = args.limit
     if args.triage_only:
         return _triage(config)

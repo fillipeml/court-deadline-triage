@@ -1,6 +1,6 @@
 """Configuration from the environment, with an optional `.env` file. No secret lives in code.
 
-`DEMO_MODE` and `DRY_RUN` are read here and in `factory.py` only; business modules never check
+`DEMO_MODE` and `DRY_RUN` are read from the environment here and nowhere else; business modules never check
 them. In demo mode the defaults point at the fixture bar numbers, a local SQLite file under
 `.demo/` and a fixed reference date, so the demo is deterministic and needs no credential.
 """
@@ -139,7 +139,7 @@ class Config:
         return cls(
             bar_numbers=parse_bar_numbers(bars),
             djen_base_url=(env("DJEN_BASE_URL", "").strip() or DEFAULT_DJEN_BASE_URL).rstrip("/"),
-            window_days=int(env("WINDOW_DAYS", "3")),
+            window_days=int(env("WINDOW_DAYS", "").strip() or "3"),
             dry_run=_bool(env("DRY_RUN"), default=True),
             demo_mode=demo,
             reference_date=date.fromisoformat(reference)
@@ -157,7 +157,7 @@ class Config:
             graph_tenant_id=env("GRAPH_TENANT_ID", "").strip(),
             graph_client_id=env("GRAPH_CLIENT_ID", "").strip(),
             graph_client_secret=env("GRAPH_CLIENT_SECRET", "").strip(),
-            urgent_business_days=int(env("URGENT_BUSINESS_DAYS", "3")),
+            urgent_business_days=int(env("URGENT_BUSINESS_DAYS", "").strip() or "3"),
             triage_limit=int(limit) if limit else None,
             require_validated_catalogue=_bool(env("REQUIRE_VALIDATED_CATALOGUE"), default=False),
         )
